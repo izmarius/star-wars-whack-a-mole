@@ -1,0 +1,107 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.wrapper {
+    border: 3px solid black;
+    width: 800px;
+    height: 600px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-image: url(/img/background.png);
+    overflow: hidden;
+}
+
+.score {
+    font-size: 150px;
+    color: black;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 200px;
+    height: 100px;
+    text-align: center;
+}
+
+.countdown {
+    position: absolute;
+    top: 490px;
+    width: 100%;
+    font-size: 20px;
+    text-align: center;
+    color: black;
+}
+
+.start-button {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translate(-50%, 0);
+    background: black;
+    color: white;
+    padding: 20px 50px;
+    border-radius: 5px;
+    cursor: pointer;
+    border: none;
+    outline: none;
+    z-index: 200;
+}
+
+.game {
+    width: 600px;
+    height: 400px;
+    margin: 70px auto;
+    z-index: 200;
+    display: flex;
+    flex-flow: row wrap;
+}
+
+.hole {
+    flex: 1 0 33.33%;
+    position: relative;
+    overflow: hidden;
+}
+
+.hole::after {
+    content: '';
+    display: block;
+    background-image: url('/img/sand1.png');
+    position: absolute;
+    width: 100%;
+    height: 70px;
+    z-index: 2;
+    bottom: -30px;
+    background-size: contain;
+}
+
+.mole {
+    background-image: url('/img/yoda1.png');
+    position: absolute;
+    top: 100%;
+    width: 100%;
+    height: 100%;
+    transition: 0.4s;
+    background-repeat: no-repeat;
+    background-position: bottom;
+}
+
+.mole.small {
+    background-size: 60%;
+}
+
+.mole.large {
+    background-size: 80%;
+}
+
+.hole.up .mole {
+    top: 0%;
+}
